@@ -1,6 +1,7 @@
 from behave import *
 from tests.acceptance.page_model.base_page import BasePage
 
+
 use_step_matcher('re')
 
 
@@ -12,4 +13,5 @@ def step_impl(context):
 @step('The title tag has content "(.*)"')
 def step_impl(context, content):
     page = BasePage(context.driver)
-    assert page.title == content
+    tag = page.title
+    assert tag.text == content

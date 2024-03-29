@@ -20,7 +20,7 @@ def step_impl(context):
 
 @then('I am on the blog page')
 def step_impl(context):
-    expected_url = BlogPage(context.driver)
+    expected_url = BlogPage(context.driver).url
     assert context.driver.current_url == expected_url
 
 @then('I am on the homepage')
